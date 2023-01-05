@@ -43,6 +43,8 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             if (_checked.asMap().values.contains(false)) {
               return userShowSnackBar();
+            } else {
+              return userAllShowSnackBar();
             }
           },
           child: Text("null check"),
@@ -81,5 +83,10 @@ class _HomePageState extends State<HomePage> {
   void userShowSnackBar() {
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text("체크박스가 모두 선택되지 않았습니다.")));
+  }
+
+  void userAllShowSnackBar() {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text("모두 선택되었습니다.")));
   }
 }
